@@ -18,8 +18,29 @@
     <link href="../css/style.css" rel="stylesheet"> <!-- นำเข้า Style (ถ้ามี) -->
 </head>
 
-<body>
-
+<body class="vh-100 d-flex align-items-center justify-content-center bg-info">
+    <div class="containter-fluid">
+        <div class="card bg-danger">
+            <div class="card-header fw-bold">
+                LOGIN - Administrator
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="username" placeholder="-">
+                        <label>Username</label>
+                    </div>
+                    <div class="form-floating my-2">
+                        <input type="password" class="form-control" id="password" placeholder="-">
+                        <label>Password</label>
+                    </div>
+                    <div class="container ms-5">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="../js/jquery.min.js"></script> <!-- นำเข้า JS ของ jQuery -->
     <script src="../js/bootstrap.bundle.min.js"></script> <!-- นำเข้า JS ของ Bootstrap -->
