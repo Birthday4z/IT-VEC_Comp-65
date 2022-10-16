@@ -22,22 +22,22 @@
     <div class="container">
         <div class="row m-3">
             <div class="col">
-                <a href="./customer/customer.php"><button type="button"
+                <a href="./customer/customer-login.php"><button type="button"
                         class="btn btn-primary w-100 py-5">ลูกค้า</button></a>
             </div>
         </div>
         <div class="row m-3">
             <div class="col-6">
-                <a href="./rider/rider.php"><button type="button" class="btn btn-success w-100">ผู้ส่งอาหาร</button></a>
+                <a href="./rider/rider-login.php"><button type="button" class="btn btn-success w-100">ผู้ส่งอาหาร</button></a>
             </div>
             <div class="col-6">
-                <a href="./restaurant/restaurant.php"><button type="button"
+                <a href="./restaurant/restaurant-login.php"><button type="button"
                         class="btn btn-warning w-100">ร้านอาหาร</button></a>
             </div>
         </div>
         <div class="row m-3">
             <div class="col">
-                <a href="./admin/admin.php"><button type="button" class="btn btn-danger w-100">ผู้ดูแลระบบ</button></a>
+                <a href="./admin/admin-login.php"><button type="button" class="btn btn-danger w-100">ผู้ดูแลระบบ</button></a>
             </div>
         </div>
     </div>
