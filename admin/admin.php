@@ -19,7 +19,7 @@
 </head>
 
 <body class="vh-100 d-flex align-items-center justify-content-center bg-info">
-    <div class="containter-fluid">
+    <div class="containter-fluid w-25">
         <div class="card bg-danger">
             <div class="card-header fw-bold">
                 LOGIN - Administrator
@@ -34,8 +34,8 @@
                         <input type="password" class="form-control" id="password" placeholder="-">
                         <label>Password</label>
                     </div>
-                    <div class="container ms-5">
-                        <button type="submit" class="btn btn-success">Submit</button>
+                    <div class="container d-flex justify-content-end">
+                        <button type="submit" class="btn btn-success">LOGIN</button>
                     </div>
                 </form>
             </div>
