@@ -5,6 +5,16 @@
     //     echo "เชื่อมต่อฐานข้อมูลสำเร็จ!";
     // }
     // else echo "เกิดข้อผิดพลาด".mysqli_connect_error();
+    
+    
+    if(empty($_SESSION['id'])) { // ถ้ายังไม่เคย Login ให้กลับไปหน้า Login
+        header("refresh:0;url=admin-login.php");
+    }
+
+    if(isset($_POST['logout'])) { // กดปุ่ม Logout
+        session_destroy();
+        header("refresh:0;url=admin-login.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +80,10 @@
                     </li>
                 </ul>
             </div>
-            <button class="btn btn-danger me-2">LOGOUT</button>
+            <!-- ปุ่ม Logout -->
+            <form method="POST">
+                <button class="btn btn-danger me-2" name="logout">LOGOUT</button>
+            </form>
         </div>
     </nav>
 
