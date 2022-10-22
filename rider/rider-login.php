@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ผู้ส่งอาหาร - ระบบสั่งจองอาหารออนไลน์</title> <!-- เปลี่ยน Title ของเว็บเพจ (ชื่อ Tab ของเว็บ) -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"> <!-- นำเข้า CSS ของ Bootstrap -->
-    <link href="../css/style.css" rel="stylesheet"> <!-- นำเข้า Style (ถ้ามี) -->
 </head>
 
 <body class="vh-100 d-flex align-items-center justify-content-center bg-info">

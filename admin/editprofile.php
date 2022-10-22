@@ -45,7 +45,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ผู้ดูแลระบบ - แก้ไขข้อมูลส่วนตัว</title> <!-- เปลี่ยน Title ของเว็บเพจ (ชื่อ Tab ของเว็บ) -->
     <link href="../css/bootstrap.min.css" rel="stylesheet"> <!-- นำเข้า CSS ของ Bootstrap -->
-    <link href="../css/style.css" rel="stylesheet"> <!-- นำเข้า Style (ถ้ามี) -->
 </head>
 
 <body>
@@ -114,19 +113,23 @@
             <div class="card-body">
                 <form method="POST">
                     <div class="form-floating">
-                        <input type="text" class="form-control" name="firstname" placeholder="-" value="<?php echo $_SESSION['firstname'] ?>">
+                        <input type="text" class="form-control" name="firstname" placeholder="-"
+                            value="<?php echo $_SESSION['firstname'] ?>">
                         <label>ชื่อจริง</label>
                     </div>
                     <div class="form-floating">
-                        <input type="text" class="form-control" name="lastname" placeholder="-" value="<?php echo $_SESSION['lastname'] ?>">
+                        <input type="text" class="form-control" name="lastname" placeholder="-"
+                            value="<?php echo $_SESSION['lastname'] ?>">
                         <label>นามสกุล</label>
                     </div>
                     <div class="form-floating">
-                        <input type="text" class="form-control" name="address" placeholder="-" value="<?php echo $_SESSION['address'] ?>">
+                        <input type="text" class="form-control" name="address" placeholder="-"
+                            value="<?php echo $_SESSION['address'] ?>">
                         <label>ที่อยู่</label>
                     </div>
                     <div class="form-floating">
-                        <input type="text" class="form-control" name="phone" placeholder="-" value="<?php echo $_SESSION['phone'] ?>">
+                        <input type="text" class="form-control" name="phone" placeholder="-"
+                            value="<?php echo $_SESSION['phone'] ?>">
                         <label>เบอร์โทรศัพท์</label>
                     </div>
                     <div class="container-fluid d-flex justify-content-end">
