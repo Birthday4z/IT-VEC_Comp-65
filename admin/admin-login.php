@@ -61,6 +61,7 @@
                         <label>Password</label>
                     </div>
                     <div class="container d-flex justify-content-end">
+                        <a href="../index.php" class="btn btn-warning mx-2">BACK</a>
                         <button type="submit" class="btn btn-success" name="submit">LOGIN</button>
                     </div>
                 </form>
