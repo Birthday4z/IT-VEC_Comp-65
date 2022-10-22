@@ -18,7 +18,7 @@
     <link href="css/style.css" rel="stylesheet"> <!-- นำเข้า Style (ถ้ามี) -->
 </head>
 
-<body class="vh-100 d-flex align-items-center">
+<body class="vh-100 d-flex align-items-center bg-dark bg-gradient">
     <div class="container">
         <div class="row m-3">
             <div class="col">
