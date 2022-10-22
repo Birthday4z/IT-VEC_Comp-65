@@ -55,10 +55,10 @@
             <div class="navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">แก้ไขข้อมูลส่วนตัว</a>
+                        <a class="nav-link" href="editprofile.php">แก้ไขข้อมูลส่วนตัว</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">เปลี่ยนรหัสผ่าน</a>
+                        <a class="nav-link" href="changepassword.php">เปลี่ยนรหัสผ่าน</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">สร้างประเภทร้านอาหาร</a>
