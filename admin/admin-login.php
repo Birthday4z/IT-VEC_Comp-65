@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $conDB = mysqli_connect("localhost", "root", "", "it-comp-65"); // เชื่อมต่อฐานข้อมูล
     // if($conDB) {
     //     echo "เชื่อมต่อฐานข้อมูลสำเร็จ!";
@@ -21,6 +22,8 @@
                 $_SESSION['lastname'] = $row['lastname'];
                 $_SESSION['address'] = $row['address'];
                 $_SESSION['phone'] = $row['phone'];
+
+                header("refresh:0;url=admin.php");
             }
         }
         else {
