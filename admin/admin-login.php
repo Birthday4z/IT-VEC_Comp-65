@@ -4,6 +4,30 @@
     //     echo "เชื่อมต่อฐานข้อมูลสำเร็จ!";
     // }
     // else echo "เกิดข้อผิดพลาด".mysqli_connect_error();
+
+    if(isset($_POST['submit'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $sql = "SELECT id, username, password, firstname, lastname, address, phone FROM admin WHERE username = '$username' and password = '$password'"; // เตรียมคำสั่ง SQL
+        $query = mysqli_query($conDB, $sql); // สั่งให้หาข้อมูลในฐานข้อมูล ข้อมูลที่ได้จะเป็นแบบ [Array]
+        $queryrow = mysqli_num_rows($query); // หาจำนวนแถวของข้อมูลที่ได้จากฐานข้อมูล
+        
+        if($queryrow > 0) {
+            echo "<script type='text/javascript'>alert('Login สำเร็จ');</script>";
+            foreach($query as $row) {
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['firstname'] = $row['firstname'];
+                $_SESSION['lastname'] = $row['lastname'];
+                $_SESSION['address'] = $row['address'];
+                $_SESSION['phone'] = $row['phone'];
+            }
+        }
+        else {
+            echo "<script type='text/javascript'>alert('Login ไม่สำเร็จ');</script>";
+        }
+
+    }
 ?>
 
 <!DOCTYPE html>
@@ -27,15 +51,15 @@
             <div class="card-body">
                 <form method="POST">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="username" placeholder="-">
+                        <input type="text" class="form-control" name="username" placeholder="-">
                         <label>Username</label>
                     </div>
                     <div class="form-floating my-2">
-                        <input type="password" class="form-control" id="password" placeholder="-">
+                        <input type="password" class="form-control" name="password" placeholder="-">
                         <label>Password</label>
                     </div>
                     <div class="container d-flex justify-content-end">
-                        <button type="submit" class="btn btn-success">LOGIN</button>
+                        <button type="submit" class="btn btn-success" name="submit">LOGIN</button>
                     </div>
                 </form>
             </div>
