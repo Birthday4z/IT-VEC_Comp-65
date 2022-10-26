@@ -1,11 +1,6 @@
 <?php
+    require_once "../php/dbcon.php";
     session_start();
-    $conDB = mysqli_connect("localhost", "root", "", "it-comp-65"); // เชื่อมต่อฐานข้อมูล
-    // if($conDB) {
-    //     echo "เชื่อมต่อฐานข้อมูลสำเร็จ!";
-    // }
-    // else echo "เกิดข้อผิดพลาด".mysqli_connect_error();
-    
     
     if(empty($_SESSION['id'])) { // ถ้ายังไม่เคย Login ให้กลับไปหน้า Login
         header("refresh:0;url=admin-login.php");

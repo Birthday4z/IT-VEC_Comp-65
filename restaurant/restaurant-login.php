@@ -1,9 +1,5 @@
 <?php
-    $conDB = mysqli_connect("localhost", "root", "", "it-comp-65"); // เชื่อมต่อฐานข้อมูล
-    // if($conDB) {
-    //     echo "เชื่อมต่อฐานข้อมูลสำเร็จ!";
-    // }
-    // else echo "เกิดข้อผิดพลาด".mysqli_connect_error();
+    require_once "../php/dbcon.php";
 ?>
 
 <!DOCTYPE html>
