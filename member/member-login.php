@@ -17,7 +17,7 @@
     <div class="containter-fluid w-25">
         <div class="card bg-primary">
             <div class="card-header fw-bold">
-                LOGIN - Customer
+                LOGIN - Member
             </div>
             <div class="card-body">
                 <form method="POST">
