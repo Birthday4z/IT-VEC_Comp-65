@@ -6,10 +6,6 @@
         header("refresh:0;url=admin-login.php");
     }
 
-    if(isset($_POST['logout'])) { // กดปุ่ม Logout
-        session_destroy();
-        header("refresh:0;url=admin-login.php");
-    }
 
     if(isset($_POST['submit'])) { //กดปุ่ม เปลี่ยนรหัสผ่าน
         $id = $_SESSION['id'];
