@@ -6,4 +6,5 @@
     $conDB = mysqli_connect($hostname, $username, $password, $database); // เชื่อมต่อฐานข้อมูล
 
     date_default_timezone_set("Asia/Bangkok"); // ตั้งเขตเวลาของฐานข้อมูล
+    // error_reporting(0); // ปิด Warning
 ?>
