@@ -72,6 +72,13 @@
 
                             if ($queryrow > 0) {
                                 foreach($query as $row) {
+                                    if($row['isAllow'] == 0) {
+                                        $row['isAllow'] = "ระงับ";
+                                    }
+                                    else if($row['isAllow'] == 1) {
+                                        $row['isAllow'] = "อนุมัติ";
+                                    }
+
                                     echo "
                                     <tr>
                                     <td>{$row['id']}</td>
@@ -81,7 +88,7 @@
                                     <td>{$row['address']}</td>
                                     <td>{$row['phone']}</td>
                                     <td>
-                                        <a href='?allow={$row['id']}' class='btn btn-success'>อนุญาต</a>
+                                        <a href='?allow={$row['id']}' class='btn btn-success'>อนุมัติ</a>
                                         <a href='?notallow={$row['id']}' class='btn btn-danger'>ระงับ</a>
                                     </tr>
                                     ";
