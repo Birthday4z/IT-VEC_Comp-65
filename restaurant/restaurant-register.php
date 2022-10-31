@@ -1,5 +1,24 @@
 <?php
     require_once "../php/dbcon.php";
+
+    if(isset($_POST['submit'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $img = mysqli_real_escape_string($conDB, (file_get_contents($_FILES['img']['tmp_name'])));
+        $type_id = $_POST['type'];
+        $name = $_POST['name'];
+        $address = $_POST['address'];
+        $phone = $_POST['phone'];
+
+        $sql = "INSERT INTO restaurant(username, password, img, type_id, name, address, phone) VALUES ('$username', '$password', '$img', $type_id, '$name', '$address', '$phone')";
+        $query = mysqli_query($conDB, $sql);
+
+        if ($query > 0) {
+            echo "<script type='text/javascript'>alert('เพิ่มบัญชีร้านอาหารสำเร็จ');</script>";
+        }
+        else echo "<script type='text/javascript'>alert('เกิดข้อผิดพลาด เพิ่มบัญชีร้านอาหารไม่สำเร็จ');</script>";
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -20,38 +39,51 @@
                 Register - Restaurant
             </div>
             <div class="card-body">
-                <form method="POST">
+                <form enctype="multipart/form-data" method="POST">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="username" placeholder="-">
+                        <input type="text" class="form-control" name="username" placeholder="-">
                         <label>Username</label>
                     </div>
                     <div class="form-floating my-2">
-                        <input type="password" class="form-control" id="password" placeholder="-">
+                        <input type="password" class="form-control" name="password" placeholder="-">
                         <label>Password</label>
                     </div>
                     <div class="form-floating my-2">
-                        <input type="file" class="form-control" id="img" placeholder="-">
+                        <input type="file" class="form-control" name="img" placeholder="-">
                         <label>รูปภาพ</label>
                     </div>
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control" id="img" placeholder="-">
+                    <select class="form-select" name="type">
+                        <option selected>กรุณาเลือกประเภทร้านอาหาร</option>
+                        <?php
+                        // ดึงข้อมูลประเภทอาหาร
+                        $sql = "SELECT id, type FROM restaurant_type";
+                        $query = mysqli_query($conDB, $sql);
+                        $queryrow = mysqli_num_rows($query);
+                        if($queryrow > 0) {
+                            foreach($query as $row) {
+                                echo "<option value='{$row['id']}'>{$row['type']}</option>";
+                            }
+                        }
+                        ?>
+                    </select>
                         <label>ประเภทร้านอาหาร</label>
                     </div>
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control" id="img" placeholder="-">
+                        <input type="text" class="form-control" name="name" placeholder="-">
                         <label>ชื่อร้านอาหาร</label>
                     </div>
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control" id="img" placeholder="-">
+                        <input type="text" class="form-control" name="address" placeholder="-">
                         <label>ที่อยู่ร้านอาหาร</label>
                     </div>
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control" id="img" placeholder="-">
+                        <input type="text" class="form-control" name="phone" placeholder="-">
                         <label>เบอร์ติดต่อร้านอาหาร</label>
                     </div>
                     <div class="container text-end">
                         <a href="../index.php" class="btn btn-danger mx-2">BACK</a>
-                        <button type="submit" class="btn btn-success">LOGIN</button>
+                        <button type="submit" class="btn btn-success" name="submit">UPLOAD</button>
                     </div>
                 </form>
             </div>
