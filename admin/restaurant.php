@@ -56,6 +56,7 @@
                     <thead>
                         <tr>
                             <td>ID ร้านอาหาร</td>
+                            <td width='20%'>รูปภาพ</td>
                             <td>Username</td>
                             <td>สถานะบัญชี</td>
                             <td>ชื่อร้านอาหาร</td>
@@ -66,12 +67,13 @@
                     </thead>
                     <tbody>
                         <?php
-                            $sql = "SELECT id, username, isAllow, name, address, phone FROM restaurant";
+                            $sql = "SELECT id, img, username, isAllow, name, address, phone FROM restaurant";
                             $query = mysqli_query($conDB, $sql);
                             $queryrow = mysqli_num_rows($query);
 
                             if ($queryrow > 0) {
                                 foreach($query as $row) {
+                                    $img = base64_encode($row['img']);
                                     if($row['isAllow'] == 0) {
                                         $row['isAllow'] = "ระงับ";
                                     }
@@ -82,14 +84,17 @@
                                     echo "
                                     <tr>
                                     <td>{$row['id']}</td>
+                                    <td><img src='data:image/jpeg;base64,{$img}' class='img-fluid'></td>
                                     <td>{$row['username']}</td>
                                     <td>{$row['isAllow']}</td>
                                     <td>{$row['name']}</td>
                                     <td>{$row['address']}</td>
                                     <td>{$row['phone']}</td>
                                     <td>
+                                        <div class='container-fluid'>
                                         <a href='?allow={$row['id']}' class='btn btn-success'>อนุมัติ</a>
                                         <a href='?notallow={$row['id']}' class='btn btn-danger'>ระงับ</a>
+                                        </div>
                                     </tr>
                                     ";
                                 }
