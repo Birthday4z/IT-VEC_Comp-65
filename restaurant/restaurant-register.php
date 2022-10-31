@@ -17,7 +17,7 @@
     <div class="containter-fluid w-25">
         <div class="card bg-warning">
             <div class="card-header fw-bold">
-                LOGIN - Restaurant
+                Register - Restaurant
             </div>
             <div class="card-body">
                 <form method="POST">
@@ -29,10 +29,29 @@
                         <input type="password" class="form-control" id="password" placeholder="-">
                         <label>Password</label>
                     </div>
+                    <div class="form-floating my-2">
+                        <input type="file" class="form-control" id="img" placeholder="-">
+                        <label>รูปภาพ</label>
+                    </div>
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control" id="img" placeholder="-">
+                        <label>ประเภทร้านอาหาร</label>
+                    </div>
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control" id="img" placeholder="-">
+                        <label>ชื่อร้านอาหาร</label>
+                    </div>
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control" id="img" placeholder="-">
+                        <label>ที่อยู่ร้านอาหาร</label>
+                    </div>
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control" id="img" placeholder="-">
+                        <label>เบอร์ติดต่อร้านอาหาร</label>
+                    </div>
                     <div class="container text-end">
                         <a href="../index.php" class="btn btn-danger mx-2">BACK</a>
-                        <a href="restaurant-register.php" class="btn btn-primary mx-2">Register</a>
-                        <button type="submit" class="btn btn-success mx-2">LOGIN</button>
+                        <button type="submit" class="btn btn-success">LOGIN</button>
                     </div>
                 </form>
             </div>
