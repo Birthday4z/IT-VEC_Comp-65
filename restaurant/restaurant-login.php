@@ -6,7 +6,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $sql = "SELECT id, type_id, name, address, phone FROM restaurant WHERE username = '$username' and password = '$password' and isAllow = 1";
+        $sql = "SELECT id, img, type_id, name, address, phone FROM restaurant WHERE username = '$username' and password = '$password' and isAllow = 1";
         $query = mysqli_query($conDB, $sql);
         $queryrow = mysqli_num_rows($query);
 
@@ -14,6 +14,7 @@
             echo "<script type='text/javascript'>alert('Login สำเร็จ');</script>";
             foreach($query as $row) {
                 $_SESSION['id'] = $row['id'];
+                $_SESSION['img'] = base64_encode($row['img']);
                 $_SESSION['type_id'] = $row['type_id'];
                 $_SESSION['name'] = $row['name'];
                 $_SESSION['address'] = $row['address'];
