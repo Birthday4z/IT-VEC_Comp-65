@@ -8,15 +8,15 @@
 
     if(isset($_POST['submit'])) { //กดปุ่ม แก้ไข
         $id = $_SESSION['id'];
+        $type = $_POST['type'];
         $name = $_POST['name'];
         $address = $_POST['address'];
         $phone = $_POST['phone'];
 
-        $sql = "UPDATE restaurant SET firstname = '$firstname', lastname = '$lastname', address = '$address', phone = '$phone' WHERE id = $id"; // เตรียมคำสั่ง SQL
+        $sql = "UPDATE restaurant SET type_id = $type, name = '$name', address = '$address', phone = '$phone' WHERE id = $id"; // เตรียมคำสั่ง SQL
         $query = mysqli_query($conDB, $sql); // สั่งให้หาข้อมูลในฐานข้อมูล ข้อมูลที่ได้จะเป็นแบบ [Array]
         if($query) {
-            $_SESSION['firstname'] = $firstname;
-            $_SESSION['lastname'] = $lastname;
+            $_SESSION['name'] = $name;
             $_SESSION['address'] = $address;
             $_SESSION['phone'] = $phone;
             echo "<script type='text/javascript'>alert('แก้ไขข้อมูลสำเร็จ');</script>";
