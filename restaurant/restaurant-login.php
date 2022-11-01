@@ -1,5 +1,31 @@
 <?php
     require_once "../php/dbcon.php";
+    session_start();
+
+    if(isset($_POST['submit'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $sql = "SELECT id, type_id, name, address, phone FROM restaurant WHERE username = '$username' and password = '$password' and isAllow = 1";
+        $query = mysqli_query($conDB, $sql);
+        $queryrow = mysqli_num_rows($query);
+
+        if($queryrow > 0) {
+            echo "<script type='text/javascript'>alert('Login สำเร็จ');</script>";
+            foreach($query as $row) {
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['type_id'] = $row['type_id'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['address'] = $row['address'];
+                $_SESSION['phone'] = $row['phone'];
+
+                header("refresh:0;url=restaurant.php");
+            }
+        }
+        else {
+            echo "<script type='text/javascript'>alert('Login ไม่สำเร็จ กรอกข้อมูลไม่ถูกต้องหรือบัญชียังไม่ได้รับอนุญาต');</script>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -22,17 +48,17 @@
             <div class="card-body">
                 <form method="POST">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="username" placeholder="-">
+                        <input type="text" class="form-control" name="username" placeholder="-">
                         <label>Username</label>
                     </div>
                     <div class="form-floating my-2">
-                        <input type="password" class="form-control" id="password" placeholder="-">
+                        <input type="password" class="form-control" name="password"  placeholder="-">
                         <label>Password</label>
                     </div>
                     <div class="container text-end">
                         <a href="../index.php" class="btn btn-danger mx-2">BACK</a>
                         <a href="restaurant-register.php" class="btn btn-primary mx-2">Register</a>
-                        <button type="submit" class="btn btn-success mx-2">LOGIN</button>
+                        <button type="submit" class="btn btn-success mx-2" name="submit">LOGIN</button>
                     </div>
                 </form>
             </div>
