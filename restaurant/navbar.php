@@ -20,13 +20,13 @@
                         <a class="nav-link" href="changepassword.php">เปลี่ยนรหัสผ่าน</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add-type.php">สร้างประเภทร้านอาหาร</a>
+                        <a class="nav-link" href="add-type.php">สร้างประเภทอาหาร</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="restaurant.php">จัดการบัญชีร้านอาหาร</a>
+                        <a class="nav-link" href="add-food.php">เพิ่มรายการอาหาร</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">จัดการบัญชีผู้ส่งอาหาร</a>
+                        <a class="nav-link" href="listfood.php">จัดการรายการอาหาร</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">จัดการบัญชีสมาชิก</a>
