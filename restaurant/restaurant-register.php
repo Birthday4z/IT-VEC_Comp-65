@@ -56,7 +56,7 @@
                     <select class="form-select" name="type">
                         <option selected>กรุณาเลือกประเภทร้านอาหาร</option>
                         <?php
-                        // ดึงข้อมูลประเภทอาหาร
+                        // ดึงข้อมูลประเภทร้านอาหาร
                         $sql = "SELECT id, type FROM restaurant_type";
                         $query = mysqli_query($conDB, $sql);
                         $queryrow = mysqli_num_rows($query);
